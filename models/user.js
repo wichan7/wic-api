@@ -20,7 +20,6 @@ userSchema.statics.create = function (payload) {
 // Find All
 userSchema.statics.findAll = function () {
   // return promise
-  // V4부터 exec() 필요없음
   return this.find({});
 };
 
