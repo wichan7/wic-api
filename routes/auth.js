@@ -1,8 +1,13 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
+// 회원가입
+router.get('/join', function(req, res, next) {
+  res.send('auth');
+});
+
+// 로그인
+router.get('/login', function(req, res, next) {
   res.send('auth');
 });
 
