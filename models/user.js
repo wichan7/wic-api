@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 // Define Schemes
 const userSchema = new mongoose.Schema({
-  userid: { type: String, required: true, unique: true },
+  userId: { type: String, required: true, unique: true },
   password: { type: String, required: true }
 },
 {
@@ -23,20 +23,20 @@ userSchema.statics.findAll = function () {
   return this.find({});
 };
 
-// Find One by userid
-userSchema.statics.findOneByuserid = function (userid) {
-  return this.findOne({ userid });
+// Find One by userId
+userSchema.statics.findOneByuserId = function (userId) {
+  return this.findOne({ userId });
 };
 
-// Update by userid
-userSchema.statics.updateByuserid = function (userid, payload) {
+// Update by userId
+userSchema.statics.updateByuserId = function (userId, payload) {
   // { new: true }: return the modified document rather than the original. defaults to false
-  return this.findOneAndUpdate({ userid }, payload, { new: true });
+  return this.findOneAndUpdate({ userId }, payload, { new: true });
 };
 
-// Delete by userid
-userSchema.statics.deleteByuserid = function (userid) {
-  return this.remove({ userid });
+// Delete by userId
+userSchema.statics.deleteByuserId = function (userId) {
+  return this.remove({ userId });
 };
 
 // Create Model & Export
