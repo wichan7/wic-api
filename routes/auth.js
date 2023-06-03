@@ -4,6 +4,7 @@ const User = require('../models/user');
 
 // 회원가입
 router.post('/join', function(req, res, next) {
+  /* check */
   if (!req.body.userId) return res.status(400).send("field 'userId' is required.");
   if (!req.body.password) return res.status(400).send("field 'password' is required.");
 
@@ -14,10 +15,10 @@ router.post('/join', function(req, res, next) {
 
 // 로그인
 router.post('/login', function(req, res, next) {
-  /* id, pw check */
+  /* check */
   if (!req.body.userId) return res.status(400).send("field 'userId' is required.");
   if (!req.body.password) return res.status(400).send("field 'password' is required.");
-
+  
   User.findOne(req.body)
     .then( result => result ? res.send("ok") : res.status(400).send("fail") )
     .catch( err => res.status(500).send(err) );
