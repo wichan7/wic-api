@@ -11,10 +11,7 @@ router.post('/join', function(req, res, next) {
 
   if (!userId) return res.status(400).send("field 'userId' is required.");
   if (!password) return res.status(400).send("field 'password' is required.");
-
-  /**
-   * TODO: password 규칙 체크
-   */
+  if (!/^(?=.*[A-Za-z])(?=.*\d)(?=.*[$@$!%*#?&])[A-Za-z\d$@$!%*#?&]{8,}$/.test(password)) return res.status(400).send("패스워드 최소 8 자, 최소 하나의 문자, 하나의 숫자 및 하나의 특수 문자");
 
   const hashedPassword = CryptoJS.SHA256(password + HASH_SALT).toString();
 
