@@ -9,6 +9,7 @@ let cookieParser = require('cookie-parser');
 let logger = require('morgan');
 let debugI = require('debug')('app:inform');
 let debugE = require('debug')('app:error');
+const cors = require('cors');
 
 // define routes
 let authRoutes = require('./routes/auth');
@@ -22,6 +23,7 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(cors());
 
 /* route 설정 */
 app.use('/auth', authRoutes);
