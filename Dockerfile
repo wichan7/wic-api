@@ -11,6 +11,8 @@ COPY . /app
 
 RUN npm install
 
+RUN npm install -g pm2
+
 EXPOSE 3311
 
 CMD ["npm", "start"]

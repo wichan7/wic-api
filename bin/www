@@ -1,6 +1,5 @@
 // env
 require('dotenv').config();
-const { PORT } = process.env;
 
 // import
 let app = require('../app');
@@ -10,7 +9,7 @@ let http = require('http');
 /**
  * Get port from environment and store in Express.
  */
-let port = normalizePort(PORT || '3311');
+let port = normalizePort(process.env.PORT || '3311');
 app.set('port', port);
 
 /**
