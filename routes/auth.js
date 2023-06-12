@@ -45,7 +45,9 @@ router.post('/login', function(req, res, next) {
   User.findOne(req.body)
     .then( result => result ? res.send({resultCode: 200, resultMessage: "ok"}) : res.status(400).send({resultCode: 400, resultMessage: "fail"}) )
     .catch( err => {
-      debugI(err);
+      console.log(JSON.stringify(err));
+      console.log("=================");
+      console.log(err);
       return res.status(500).send({resultCode: 500, resultMessage: err});
      } );
 });
