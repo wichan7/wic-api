@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "pm2 start ./bin/www",
+    "start": "pm2-runtime start ./bin/www",
     "debug": "set DEBUG=* & node ./bin/www"
   },
   "dependencies": {

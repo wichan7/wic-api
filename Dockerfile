@@ -1,4 +1,3 @@
-#BASE IMAGE
 FROM node:latest
 
 MAINTAINER wichan7@naver.com
@@ -9,9 +8,9 @@ WORKDIR /app
 
 COPY . /app
 
-RUN npm install
-
 RUN npm install -g pm2
+
+RUN npm install
 
 EXPOSE 3311
 
