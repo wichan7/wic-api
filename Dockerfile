@@ -1,5 +1,5 @@
 #BASE IMAGE
-FROM node:12.18.1
+FROM node:latest
 
 MAINTAINER wichan7@naver.com
 
