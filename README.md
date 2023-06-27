@@ -1,4 +1,8 @@
+# WIC-API
+## 개요
+wic-apps의 api 서버입니다.
 
+## Directory Structure
 ```
 wic-api
 ├─ .dockerignore
