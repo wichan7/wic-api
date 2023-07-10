@@ -20,6 +20,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(cors());
+
+/* health check */
+app.use('/healthz', (req, res, next) => {
+  res.status(200).send("api ok");
+});
+
 /* route 설정 */
 app.use('/auth', authRoutes);
 app.use('/chatbot', chatbotRoutes);
